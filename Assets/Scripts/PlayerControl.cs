@@ -7,11 +7,13 @@ public class PlayerControl : MonoBehaviour
 
     private NavMeshAgent agentPlayer;
     private Ray lastRay;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         agentPlayer = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class PlayerControl : MonoBehaviour
             MoveToCursor();
         }
 
+        animator.SetFloat("Blend", agentPlayer.velocity.magnitude);
     }
 
     private void MoveToCursor()
