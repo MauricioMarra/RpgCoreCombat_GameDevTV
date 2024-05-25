@@ -1,16 +1,19 @@
 using UnityEngine;
 using RPG.Movement;
+using RPG.Combat;
 
 namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
         private MovementController movementController;
+        private Fighter fighterController;
 
         // Start is called before the first frame update
         void Start()
         {
             movementController = GetComponent<MovementController>();
+            fighterController = GetComponent<Fighter>();
         }
 
         // Update is called once per frame
@@ -19,10 +22,11 @@ namespace RPG.Control
             if (Input.GetMouseButtonDown(0))
             {
                 MoveToCursor();
+                Attack();
             }
         }
 
-        public void MoveToCursor()
+        private void MoveToCursor()
         {
             var lastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -34,6 +38,20 @@ namespace RPG.Control
             if (hasHit)
             {
                 movementController.MoveTo(hit.point);
+            }
+        }
+
+        private void Attack()
+        {
+            var hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+
+            foreach (var hit in hits)
+            {
+                var target = new CombatTarget();
+                if (hit.transform.TryGetComponent<CombatTarget>(out target))
+                {
+                    fighterController.Attack();
+                }
             }
         }
     }
