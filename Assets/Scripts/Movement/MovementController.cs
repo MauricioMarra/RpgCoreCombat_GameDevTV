@@ -24,6 +24,7 @@ namespace RPG.Movement
         public void MoveTo(Vector3 position)
         {
             agent.SetDestination(position);
+            agent.isStopped = false;
         }
     }
 }

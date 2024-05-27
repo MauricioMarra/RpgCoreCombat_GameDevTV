@@ -38,6 +38,7 @@ namespace RPG.Control
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    fighterController.Cancel();
                     movementController.MoveTo(hit.point);
                 }
 
@@ -60,7 +61,7 @@ namespace RPG.Control
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    fighterController.Attack();
+                    fighterController.Attack(target);
                 }
 
                 return true;
