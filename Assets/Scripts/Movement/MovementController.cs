@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace RPG.Movement
 {
-    public class MovementController : MonoBehaviour
+    public class MovementController : MonoBehaviour, IAction
     {
         private NavMeshAgent agent;
         private Animator animator;
@@ -33,6 +33,11 @@ namespace RPG.Movement
         {
             agent.SetDestination(position);
             agent.isStopped = false;
+        }
+
+        public void Cancel()
+        {
+            agent.isStopped = true;
         }
     }
 }

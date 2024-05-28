@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] private float weaponRange;
 
@@ -24,7 +24,7 @@ namespace RPG.Combat
         void Update()
         {
             if (this.target != null && Vector3.Distance(this.target.position, this.transform.position) <= weaponRange)
-                agent.isStopped = true;
+                movementController.Cancel();
         }
 
         public void StartAttack(CombatTarget target)
