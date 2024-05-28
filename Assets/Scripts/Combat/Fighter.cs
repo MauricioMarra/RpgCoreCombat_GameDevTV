@@ -1,3 +1,4 @@
+using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
 using UnityEngine.AI;
@@ -26,8 +27,16 @@ namespace RPG.Combat
                 agent.isStopped = true;
         }
 
-        public void Attack(CombatTarget target)
+        public void StartAttack(CombatTarget target)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
+
+            Attack(target);
+        }
+
+        private void Attack(CombatTarget target)
+        {
+
             SetTarget(target);
 
             movementController.MoveTo(target.transform.position);

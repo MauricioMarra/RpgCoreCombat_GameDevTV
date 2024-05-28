@@ -1,3 +1,4 @@
+using RPG.Core;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +20,13 @@ namespace RPG.Movement
         void Update()
         {
             animator.SetFloat("Blend", agent.velocity.magnitude);
+        }
+
+        public void StartMove(Vector3 position)
+        {
+            GetComponent<ActionScheduler>().StartAction(this);
+
+            MoveTo(position);
         }
 
         public void MoveTo(Vector3 position)
