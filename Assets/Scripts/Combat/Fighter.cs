@@ -11,12 +11,14 @@ namespace RPG.Combat
 
         private Transform target;
         private MovementController movementController;
+        private Animator animator;
         private NavMeshAgent agent;
 
         // Start is called before the first frame update
         void Start()
         {
             movementController = GetComponent<MovementController>();
+            animator = GetComponentInChildren<Animator>();
             agent = GetComponent<NavMeshAgent>();
         }
 
@@ -24,7 +26,10 @@ namespace RPG.Combat
         void Update()
         {
             if (this.target != null && Vector3.Distance(this.target.position, this.transform.position) <= weaponRange)
+            {
                 movementController.Cancel();
+                animator.SetTrigger("Attack");
+            }
         }
 
         public void StartAttack(CombatTarget target)

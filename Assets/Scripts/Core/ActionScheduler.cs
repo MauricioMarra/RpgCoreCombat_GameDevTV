@@ -22,7 +22,6 @@ namespace RPG.Core
         {
             if (currentAction != null && currentAction != action)
             {
-                Debug.Log($"Canceling {currentAction}");
                 currentAction.Cancel();
             }
 
