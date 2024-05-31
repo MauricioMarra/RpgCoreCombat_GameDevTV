@@ -8,6 +8,9 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         [SerializeField] private float weaponRange;
+        [SerializeField] private float timeBetweenAttacks;
+
+        private float countTimeBetweenAttacks = 0f;
 
         private Transform target;
         private MovementController movementController;
@@ -25,10 +28,17 @@ namespace RPG.Combat
         // Update is called once per frame
         void Update()
         {
+            countTimeBetweenAttacks += Time.deltaTime;
+
             if (this.target != null && Vector3.Distance(this.target.position, this.transform.position) <= weaponRange)
             {
                 movementController.Cancel();
-                animator.SetTrigger("Attack");
+
+                if (countTimeBetweenAttacks >= timeBetweenAttacks)
+                {
+                    animator.SetTrigger("Attack");
+                    countTimeBetweenAttacks = 0f;
+                }
             }
         }
 

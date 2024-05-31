@@ -1241,6 +1241,10 @@ PrefabInstance:
       propertyPath: weaponRange
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8271911886977032554, guid: 66c5756826f4c3c488104bf0d13aed78, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8271911886977032850, guid: 66c5756826f4c3c488104bf0d13aed78, type: 3}
       propertyPath: m_Name
       value: Player
