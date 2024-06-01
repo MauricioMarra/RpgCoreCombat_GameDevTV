@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 8271911886977032852}
   - component: {fileID: 8271911886977032853}
   - component: {fileID: 8271911886977032553}
-  - component: {fileID: 8271911886977032552}
-  - component: {fileID: 8271911886977032555}
-  - component: {fileID: 8271911886977032554}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -125,44 +122,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8271911886977032552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8271911886977032850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b43854f90962b4c9fc220ba8a53a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8271911886977032555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8271911886977032850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72abacd0df6c1ab44bb5d9a803c0af8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8271911886977032554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8271911886977032850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383e0b8e93355d84090e87c3e6b4ec23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponRange: 2
-  timeBetweenAttacks: 1
 --- !u!1001 &8271911886222657321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,14 +175,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417656, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9572094, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 54a7505c9188dd04c8d88e422a8af87c, type: 2}
-    - target: {fileID: 9572094, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
-      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
