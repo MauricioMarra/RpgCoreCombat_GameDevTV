@@ -639,9 +639,6 @@ GameObject:
   m_Component:
   - component: {fileID: 417656}
   - component: {fileID: 9572094}
-  - component: {fileID: 4685070581835641108}
-  - component: {fileID: 8012710367240692382}
-  - component: {fileID: 8923479876372310066}
   m_Layer: 0
   m_Name: Character_Knights_Soldier_01
   m_TagString: Untagged
@@ -687,45 +684,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4685070581835641108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b43854f90962b4c9fc220ba8a53a95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8012710367240692382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72abacd0df6c1ab44bb5d9a803c0af8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8923479876372310066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 383e0b8e93355d84090e87c3e6b4ec23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponRange: 2
-  weaponDamage: 0
-  timeBetweenAttacks: 1
 --- !u!1 &133736
 GameObject:
   m_ObjectHideFlags: 0
