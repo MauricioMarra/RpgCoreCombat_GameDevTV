@@ -31,6 +31,9 @@ namespace RPG.Combat
         {
             countTimeBetweenAttacks += Time.deltaTime;
 
+            if (this.target.GetComponent<Health>().IsDead())
+                this.Cancel();
+
             if (this.target != null && Vector3.Distance(this.target.position, this.transform.position) <= weaponRange)
             {
                 movementController.Cancel();

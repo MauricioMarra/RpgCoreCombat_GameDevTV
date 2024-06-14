@@ -19,7 +19,12 @@ namespace RPG.Movement
         // Update is called once per frame
         void Update()
         {
-            animator.SetFloat("Blend", agent.velocity.magnitude);
+            var velocity = agent.velocity;
+            var localVelocity = transform.InverseTransformDirection(velocity);
+            var speed = localVelocity.z;
+            animator.SetFloat("Blend", speed);
+
+            //animator.SetFloat("Blend", agent.velocity.magnitude);
         }
 
         public void StartMove(Vector3 position)
