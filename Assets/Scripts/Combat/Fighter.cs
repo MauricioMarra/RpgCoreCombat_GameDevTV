@@ -1,7 +1,6 @@
 using RPG.Core;
 using RPG.Movement;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace RPG.Combat
 {
@@ -16,14 +15,12 @@ namespace RPG.Combat
         private Transform target;
         private MovementController movementController;
         private Animator animator;
-        private NavMeshAgent agent;
 
         // Start is called before the first frame update
         void Start()
         {
             movementController = GetComponent<MovementController>();
             animator = GetComponentInChildren<Animator>();
-            agent = GetComponent<NavMeshAgent>();
         }
 
         // Update is called once per frame
@@ -31,7 +28,7 @@ namespace RPG.Combat
         {
             countTimeBetweenAttacks += Time.deltaTime;
 
-            if (this.target.GetComponent<Health>().IsDead())
+            if (this.target != null && this.target.GetComponent<Health>().IsDead())
                 this.Cancel();
 
             if (this.target != null && Vector3.Distance(this.target.position, this.transform.position) <= weaponRange)
@@ -40,7 +37,9 @@ namespace RPG.Combat
 
                 if (countTimeBetweenAttacks >= timeBetweenAttacks)
                 {
+                    animator.ResetTrigger("StopAttacking");
                     animator.SetTrigger("Attack");
+                    transform.LookAt(target);
                     countTimeBetweenAttacks = 0f;
                 }
             }
@@ -70,6 +69,8 @@ namespace RPG.Combat
 
         public void Cancel()
         {
+            animator.ResetTrigger("Attack");
+            animator.SetTrigger("StopAttacking");
             this.target = null;
         }
 
